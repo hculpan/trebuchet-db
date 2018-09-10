@@ -1,0 +1,25 @@
+Table header structure (128 bytes)
+Byte        Contents            Description
+----------------------------------------------------------------------------------------------
+0           0                   File id
+1           8 bytes             Long datetime of last update
+9           64-bit number       Number of records in file
+17          64-bit number       Number of deleted records
+25          64-bit number       First deleted record; MAX_LONG if none
+33          32-bit number       Length of header
+37          32-bit number       Length of record
+41          32-bit number       Number of fields
+45          83 bytes            Reserved
+128         Field descriptor    First field descriptor
+            array
+
+
+Field descriptor structure (64 bytes)
+Byte        Contents            Description
+----------------------------------------------------------------------------------------------
+0           32 bytes            Field name
+32          1 byte              Field type
+33          2 bytes             Field length
+35          2 bytes             Decimal count
+37          1 byte              Index indicator
+38          26 bytes            Reserved
